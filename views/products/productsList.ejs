@@ -1,0 +1,13 @@
+<select name="" id=""></select>
+
+<ul>
+    <% for (let i=0; i < products.length; i++) { %>
+        <li>
+            <h2>Producto: <%= products[i].name %>
+            </h2>
+            <p>Categoría: <%= products[i].category.name %>
+            </p>
+            <a href="/products/<%=products[i]._id%>">Ver Producto</a>
+        </li>
+        <% } %>
+</ul>
