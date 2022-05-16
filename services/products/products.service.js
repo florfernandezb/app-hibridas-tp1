@@ -5,7 +5,7 @@ const collection = 'Productos'
 async function find() {
     return DatabaseHandler.connectDB(
         async function () {
-            const products = await DatabaseHandler.getCollection(collection)
+            const products = await DatabaseHandler.find(collection)
             DatabaseHandler.closeDB()
             return products;
         }
@@ -15,16 +15,11 @@ async function find() {
 async function findById(idToFind) {
     return DatabaseHandler.connectDB(
         async function () {
-            const product =  await DatabaseHandler.getById(collection, idToFind);
+            const product = await DatabaseHandler.findById(idToFind);
             DatabaseHandler.closeDB()
             return product;
         }
     )
-}
-
-async function findComments(idToFind) {
-    let product = await findById(idToFind)
-    console.log('asdasd', product)
 }
 
 async function deleteOne(productToDelete) {
@@ -36,25 +31,22 @@ async function deleteOne(productToDelete) {
     )
 }
 
-async function updateProduct(productToUpdate) {
+async function findByCategory(category) {
     return DatabaseHandler.connectDB(
         async function () {
+            const filter = { "category": { "_id": await DatabaseHandler.parseToObjectId(category.categoryId), "name": category.categoryName } }
+            
+            let products = await DatabaseHandler.filter(collection, filter);
 
-            await DatabaseHandler.getCollection(collection).updateOne({ _id: productToUpdate }, {
-                $set: { name: "Cuerda" },
-                $unset: { name: '' }
-            })
-
-            DatabaseHandler.closeDB()
+            DatabaseHandler.closeDB();
+            return products;
         }
     )
 }
-
 
 export {
     find,
     findById,
     deleteOne,
-    updateProduct,
-    findComments
+    findByCategory
 }

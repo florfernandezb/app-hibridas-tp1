@@ -5,7 +5,7 @@ const collection = 'Categories';
 async function find() {
     return DatabaseHandler.connectDB(
         async function () {
-            const products = await DatabaseHandler.getCollection(collection)
+            const products = await DatabaseHandler.find(collection)
             DatabaseHandler.closeDB()
             return products;
         }
@@ -15,7 +15,8 @@ async function find() {
 async function createCategory(categoryToAdd) {
     DatabaseHandler.connectDB(
         async function () {
-            DatabaseHandler.create(collection, categoryToAdd)
+            await DatabaseHandler.create(collection, categoryToAdd)
+            DatabaseHandler.closeDB();
         }
     )
 }
@@ -23,7 +24,8 @@ async function createCategory(categoryToAdd) {
 async function updateCategory(id, data) {
     DatabaseHandler.connectDB(
         async function () {
-            DatabaseHandler.update(collection, id, data)
+            await DatabaseHandler.update(collection, id, data);
+            DatabaseHandler.closeDB();
         }
     )
 }

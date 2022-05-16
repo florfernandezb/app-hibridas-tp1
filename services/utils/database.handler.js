@@ -11,7 +11,7 @@ async function connectDB(action) {
         })
 }
 
-async function getCollection(collection) {
+async function find(collection) {
     return await db.collection(collection).find().toArray();
 }
 
@@ -27,11 +27,17 @@ async function remove(collection, id) {
     await db.collection(collection).deleteOne({ _id: ObjectId(id) })
 }
 
-async function getById(collection, id) {
+async function findById(collection, id) {
     return await db.collection(collection).find({ _id: ObjectId(id) }).toArray()
 }
 
+async function filter(collection, filter) {
+    return await db.collection(collection).find(filter).toArray();
+}
 
+async function parseToObjectId(id) {
+    return await ObjectId(id)
+}
 
 async function closeDB() {
     client.close();
@@ -39,10 +45,12 @@ async function closeDB() {
 
 export {
     connectDB,
-    getCollection,
+    find,
     create,
     update,
     remove,
-    getById,
+    findById,
+    filter,
     closeDB,
+    parseToObjectId,
 }

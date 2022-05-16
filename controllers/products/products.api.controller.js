@@ -8,28 +8,24 @@ export function find(req, res) {
 };
 
 export function findById(req, res) {
-    const id = req.params.id
+    const id = req.params.productId
     ProductsModel.findById(id)
         .then(function (product) {
             res.status(200).json(product);
         })
 };
 
-export function findByCategory() {
-    ProductsModel.findByCategory()
-}
-
-export function deleteOne(req, res) {
-    const id = req.params.id
-    ProductsModel.deleteOne(id)
-        .then(function() {
-            res.status(200).json();
+export function findByCategory(req, res) {
+    const category = req.params
+    ProductsModel.findByCategory(category)
+        .then(function (products) {
+            res.status(200).json(products);
         })
 }
 
-export function findComments(req, res) {
-    const id = req.params.id
-    ProductsModel.findComments(id)
+export function deleteOne(req, res) {
+    const id = req.params.productId
+    ProductsModel.deleteOne(id)
         .then(function() {
             res.status(200).json();
         })
@@ -39,5 +35,5 @@ export default{
     find,
     findById,
     deleteOne,
-    findComments
+    findByCategory
 };

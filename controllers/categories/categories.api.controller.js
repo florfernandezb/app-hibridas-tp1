@@ -17,7 +17,7 @@ function createCategory(req, res) {
 }
 
 function updateCategory(req, res) {
-    const categoryToUpdate = req.params.id;
+    const categoryToUpdate = req.params.categoryId;
     const data = req.body
 
     CategoriesModel.updateCategory(categoryToUpdate, data)
