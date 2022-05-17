@@ -1,0 +1,10 @@
+<select name="categories" id="categories">
+
+    <% for (let i=0; i < categories.length; i++) { %>
+        <option value="<%= categories[i].name %>">
+            <%= categories[i].name %>
+        </option>
+        <% } %>
+        
+
+</select>

@@ -1,10 +1,13 @@
 import * as ProductsModel from '../../services/products/products.service.js';
+import * as CategoriesModel from '../../services/categories/categories.service.js';
 
-export function showAllProducts(req, res) {
-    ProductsModel.find()
-        .then(function (products) {
-            res.render('home', { products })
-        })
+export async function showAllProducts(req, res) {
+    
+    const prod = await ProductsModel.find()
+    const cat = await CategoriesModel.find()
+
+    console.log(prod, cat)
+    res.render('home', { products: prod, categories: cat })
 }
 
 export function showProductById(req, res) {
