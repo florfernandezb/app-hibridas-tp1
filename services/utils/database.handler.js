@@ -1,6 +1,6 @@
 import { MongoClient, ObjectId } from 'mongodb'
 
-const client = new MongoClient('mongodb://localhost:27017');
+const client = new MongoClient('mongodb://127.0.0.1:27017');
 const db = await client.db('HechoPorVickiDB');
 
 async function connectDB(action) {
@@ -20,11 +20,11 @@ async function create(collection, data) {
 }
 
 async function update(collection, id, data) {
-    await db.collection(collection).updateOne({ _id: ObjectId(id) }, { $set: data })
+    await db.collection(collection).updateOne({ _id: new ObjectId(id) }, { $set: data })
 }
 
 async function remove(collection, id) {
-    await db.collection(collection).deleteOne({ _id: ObjectId(id) })
+    await db.collection(collection).deleteOne({ _id: new ObjectId(id) })
 }
 
 async function findById(collection, id) {
@@ -36,7 +36,7 @@ async function filter(collection, filter) {
 }
 
 async function parseToObjectId(id) {
-    return await ObjectId(id)
+    return new ObjectId(id)
 }
 
 async function closeDB() {

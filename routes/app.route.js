@@ -1,21 +1,25 @@
 import express from "express";
-import productsApiController from '../controllers/products/products.api.controller.js';
-import categoriesApiController from '../controllers/categories/categories.api.controller.js';
-import usersApiController from '../controllers/users/users.api.controller.js';
-import commentsApiController from '../controllers/comments/comments.api.controller.js'
+import productsApiController from '../controllers/api/products/products.api.controller.js';
+import categoriesApiController from '../controllers/api/categories/categories.api.controller.js';
+import usersApiController from '../controllers/api/users/users.api.controller.js';
+import commentsApiController from '../controllers/api/comments/comments.api.controller.js'
 
-import productsController from '../controllers/products/products.controller.js';
-import categoriesController from '../controllers/categories/categories.controller.js';
+import homeController from '../controllers/view/home.controller.js';
+import productController from '../controllers/view/product.controller.js';
 
 const route = express.Router();
 
-// VIEW CONTROLLER
+// HOME CONTROLLER
+route.get('/', homeController.showAllProducts);
+route.post('/categoryId', homeController.showProductsByCategory)
 
-route.get('/', productsController.showAllProducts);
-route.get('/products/:id', productsController.showProductById);
+// PRODUCT CONTROLLER
+route.get('/products/:id', productController.showProductById);
 
-route.get('/categoriesSelect', categoriesController.showAllCategories);
-
+// comments CONTROLLER
+// route.post('/:productId/new-comment', productController.createComment);
+// route.post('/products/new-comment', productController.saveCommentProductId);
+route.post('/new-comment', productController.createComment);
 
 // API CONTROLLER
 

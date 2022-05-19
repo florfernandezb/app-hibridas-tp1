@@ -1,4 +1,4 @@
-import * as UsersModel from '../../services/users/users.service.js'
+import * as UsersModel from '../../../services/users/users.service.js'
 
 function find(req, res) {
     UsersModel.find()

@@ -1,7 +1,7 @@
-<ul>
+<ul class="row product-list">
     <% for (let i=0; i < products.length; i++) { %>
-        <li>
-            <h2>Producto: <%= products[i].name %>
+        <li class="col-5">
+            <h2><%= products[i].name %>
             </h2>
             <p>Categoría: <%= products[i].category.name %>
             </p>

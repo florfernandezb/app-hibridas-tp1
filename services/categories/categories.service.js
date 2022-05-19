@@ -5,9 +5,9 @@ const collection = 'Categories';
 async function find() {
     return DatabaseHandler.connectDB(
         async function () {
-            const products = await DatabaseHandler.find(collection)
+            const category = await DatabaseHandler.find(collection)
             DatabaseHandler.closeDB()
-            return products;
+            return category;
         }
     )
 }

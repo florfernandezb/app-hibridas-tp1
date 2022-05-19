@@ -1,0 +1,10 @@
+<div class="comments">
+    <h3>Comentarios</h3>
+    <% for (let i=0; i < comments.length; i++) { %>
+        <p class="text"><%= comments[i].text %>
+        </p>
+
+        <% } if(comments.length !=0) { const productId=comments[0].product_id %>
+            <% } %>
+                <a href="/new-comment.html">Agregar comentario</a>
+</div>

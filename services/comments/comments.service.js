@@ -15,8 +15,9 @@ export async function find() {
 export async function findByProductId(id) {
     return DatabaseHandler.connectDB(
         async function () {
-            let filter = { 'product_id': await DatabaseHandler.parseToObjectId(id) }
+            const filter = { 'product_id': await DatabaseHandler.parseToObjectId(id) }
             const comments = await DatabaseHandler.filter(collection, filter)
+            
             DatabaseHandler.closeDB();
             return comments;
         }
@@ -26,7 +27,7 @@ export async function findByProductId(id) {
 export async function createComment(idProduct, data) {
     DatabaseHandler.connectDB(
         async function () {
-            let newComment = { 'product_id': await DatabaseHandler.parseToObjectId(idProduct), 'text': data };
+            const newComment = { 'product_id': await DatabaseHandler.parseToObjectId(idProduct), 'text': data };
             await DatabaseHandler.create(collection, newComment);
             DatabaseHandler.closeDB();
         }
@@ -36,7 +37,6 @@ export async function createComment(idProduct, data) {
 export async function updateComment(id, data) {
     DatabaseHandler.connectDB(
         async function () {
-            console.log(id, data)
             await DatabaseHandler.update(collection, id, data);
             DatabaseHandler.closeDB();
         }

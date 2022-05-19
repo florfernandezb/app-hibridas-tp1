@@ -1,14 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
-}
-
-h1 {
-    text-align: center;
-    background-color: #F8F4F9;
-    color: #2B2D42;
-    line-height: 100px;
-    height: 100px;
+    box-sizing: border-box;
 }
 
 body{
@@ -24,7 +17,6 @@ a {
     display: block;
     margin: auto;
     padding: 1em;
-    width: 300px;
 }
 
 ul {
@@ -33,12 +25,48 @@ ul {
 
 li {
     list-style: none;
-    background-color: #6b9080;
-    color: #2B2D42;
-    width: 25%;
     margin: auto;
-    border-radius: 1em;
     margin-top: .5em;
+}
+
+/******************************* HEADER *******************************/
+
+.logo {
+    background: no-repeat url('../assets/Recurso\ 7.png');
+    display: block;
+    font-size: 0px;
+    background-position: 50%;
+    width: 100%;
+    height: 162px;
+    z-index: 1;
+    margin-bottom: 15px;
+}
+
+.container_home {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.about {
+    display: inline-block;
+    width: 50%;
+}
+
+.about p{
+    font-size: 0.9em;
+    color: #F8F4F9;
+    text-align: left;
+}
+
+.container {
+    width: 100%;
+}
+
+.section {
+    padding-top: 10px;
+    margin: auto;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #F8F4F9;
 }
 
 /******************************* FORM *******************************/
@@ -54,10 +82,6 @@ li {
 form {
     padding: 2em;
     padding-top: 1em;
-}
-
-#contact h2 {
-    padding: 1em 0 0 1em;
 }
 
 .form-item label {
@@ -106,9 +130,104 @@ footer {
     top: 5em;
     padding: 1em;
     text-align: center;
+    width: 100%;
 }
 
 footer p {
     font-size: 1em;
     color: #2B2D42;
+}
+
+#redes li{
+    display: inline-block;
+}
+
+#redes li:first-child {
+    display: block;
+}
+
+#redes li:first-child a {
+    width: 138px;
+    height: 78px; 
+    font-size: 0px;
+    background: no-repeat url(../assets/logo-footer.png);
+}
+
+.social {
+    width: 50px;
+    height: 50px;
+    font-size: 0px;
+    margin: 10px;
+    display: block;
+}
+
+#ig {
+    background: no-repeat url(../assets/instagram-icon.png);
+}
+
+#tw {
+    background: no-repeat url(../assets/twitter-icon.png);
+}
+
+#fb {
+    background: no-repeat url(../assets/facebook-icon.png);
+}
+
+#mapa {
+    margin: auto;
+}
+
+/******************************* CATEGORIES *******************************/
+
+.form-select {
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    border: solid 1px #94524b;
+    color: #94524b;
+    border-radius: 10px;
+    padding: 10px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+select{
+    width: 200px;
+    padding: 5px 15px;
+    text-align: center;
+}
+
+/******************************* PRODUCT LIST *******************************/
+.product-list li{
+    border: solid 1px #F8F4F9;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/******************************* PRODUCT *******************************/
+.product-section {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    border-bottom: solid 1px #F8F4F9;
+}
+
+.product-section picture{
+    text-align: center;
+}
+
+/******************************* COMMENTS *******************************/
+.comments h3 {
+    line-height: 70px;
+}
+.text {
+    background: no-repeat url(../assets/generic-user.png);
+    border-left: solid 50px transparent;
+    background-position: -50px;
+    height: 40px;
+    line-height: 40px;
 }

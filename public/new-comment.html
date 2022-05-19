@@ -15,7 +15,7 @@
 
 <body>
     <header class="container">
-        
+
         <section class="row section">
             <div class="about col-12 col-md-8 col-lg-8">
                 <a href="/" class="logo">Hecho por Vicki</a>
@@ -36,14 +36,46 @@
                 <p>Gracias a todos por acompañarme.</p>
                 <p>Hecho por Vicki</p>
                 <p>A mano en Argentina</p>
-                
+
             </div>
             <picture class="col-12 col-md-2 col-lg-2">
                 <img src="/assets/vicki.jpg"
-                    alt="Imagen de Vicki, la dueña de Hecho por Vicki, sosteniendo una fuente con el logo de la empresa" width="267" height="420">
+                    alt="Imagen de Vicki, la dueña de Hecho por Vicki, sosteniendo una fuente con el logo de la empresa"
+                    width="267" height="420">
             </picture>
         </section>
-        
+
     </header>
 
     <main class="container">
+        <form action="/new-comment" method="post">
+            <label>
+                Deje su comentario: <input value="" name="comment" />
+            </label>
+            <button type="submit">Guardar</button>
+        </form>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <ul class="col-12 col-md-6 col-lg-6" id="redes">
+                    <li><a href="/">Hecho por Vicki</a></li>
+                    <li><a target="_blank" id="ig" href="https://www.instagram.com/" class="social">Instagram</a></li>
+                    <li><a target="_blank" id="tw" href="https://www.twitter.com/" class="social">Twitter</a></li>
+                    <li><a target="_blank" id="fb" href="https://www.facebook.com/" class="social">Facebook</a></li>
+                </ul>
+
+                <ul class="col-12 col-md-6 col-lg-6" id="mapa">
+                    <li>Florencia Fernández Bugna</li>
+                    <li>Aplicaciones Híbridas</li>
+                    <li>Brian Lara</li>
+                    <li>DWN4A | 2022</li>
+                </ul>
+
+            </div>
+        </div>
+        <p>&copy; Este sitio es una entrega para la Escuela Da Vinci</p>
+    </footer>
+</body>
+
+</html>

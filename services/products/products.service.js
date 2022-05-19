@@ -15,8 +15,10 @@ async function find() {
 async function findById(idToFind) {
     return DatabaseHandler.connectDB(
         async function () {
-            const product = await DatabaseHandler.findById(idToFind);
+            console.log(idToFind)
+            const product = await DatabaseHandler.findById(collection, idToFind);
             DatabaseHandler.closeDB()
+            
             return product;
         }
     )
@@ -34,12 +36,23 @@ async function deleteOne(productToDelete) {
 async function findByCategory(category) {
     return DatabaseHandler.connectDB(
         async function () {
-            const filter = { "category": { "_id": await DatabaseHandler.parseToObjectId(category.categoryId), "name": category.categoryName } }
+            const filter = { "category": { "_id": await category._id, "name": category.name } }
+            const products = await DatabaseHandler.filter(collection, filter);
             
-            let products = await DatabaseHandler.filter(collection, filter);
-
             DatabaseHandler.closeDB();
             return products;
+        }
+    )
+}
+
+async function filter(id) {
+    return DatabaseHandler.connectDB(
+        async function () {
+            const filter = { '_id': await DatabaseHandler.parseToObjectId(id) }
+            const comments = await DatabaseHandler.filter(collection, filter)
+            
+            DatabaseHandler.closeDB();
+            return comments;
         }
     )
 }
@@ -48,5 +61,6 @@ export {
     find,
     findById,
     deleteOne,
-    findByCategory
+    findByCategory,
+    filter
 }

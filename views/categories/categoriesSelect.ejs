@@ -1,10 +1,11 @@
-<select name="categories" id="categories">
-
-    <% for (let i=0; i < categories.length; i++) { %>
-        <option value="<%= categories[i].name %>">
-            <%= categories[i].name %>
-        </option>
+<form action="/categoryId" method="post" class="form-select">
+    <select name="categories" id="categories">
+        <option value="all">Todos</option>
+        <% for (let i=0; i < categories.length; i++) { %>
+            <option value="<%= categories[i]._id, %>">
+                <%= categories[i].name %>
+            </option>
         <% } %>
-        
-
-</select>
+    </select>
+    <button type="submit">Aplicar filtro</button>
+</form>

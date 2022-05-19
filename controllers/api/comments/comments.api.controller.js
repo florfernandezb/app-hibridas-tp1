@@ -1,4 +1,4 @@
-import * as CommentsModel from '../../services/comments/comments.service.js'
+import * as CommentsModel from '../../../services/comments/comments.service.js'
 
 function find(req, res) {
     CommentsModel.find()

@@ -1,4 +1,4 @@
-import * as ProductsModel from '../../services/products/products.service.js';
+import * as ProductsModel from '../../../services/products/products.service.js';
 
 export function find(req, res) {
     ProductsModel.find()

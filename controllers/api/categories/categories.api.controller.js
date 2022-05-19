@@ -1,4 +1,4 @@
-import * as CategoriesModel from '../../services/categories/categories.service.js';
+import * as CategoriesModel from '../../../services/categories/categories.service.js';
 
 function find(req, res) {
     CategoriesModel.find()
