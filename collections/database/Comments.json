@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "62813d3e034374ce61b68397"
+  },
+  "user": {
+    "_id": {
+      "$oid": "62805b18b8413ae0177e0693"
+    },
+    "name": "Florencia"
+  },
+  "text": "Me encantó la fuente, tiene una calidad magnífica",
+  "product_id": {
+    "$oid": "62817cd0b8413ae0177e069b"
+  }
+},{
+  "_id": {
+    "$oid": "62813e7ab8413ae0177e0699"
+  },
+  "user": {
+    "_id": {
+      "$oid": "62807327034374ce61b6838e"
+    },
+    "name": "Brian"
+  },
+  "text": "La verdad que no me gustó para nada la taza que compré, al calentarla en el microondas se recalienta la cerámica y es imposible de tomar con las manos",
+  "product_id": {
+    "$oid": "62813746b8413ae0177e0698"
+  }
+},{
+  "_id": {
+    "$oid": "628187b80cd07b3c3edc2261"
+  },
+  "product_id": {
+    "$oid": "62817cd0b8413ae0177e069b"
+  },
+  "text": "modificando el comentario de pruebass",
+  "user": {
+    "_id": {
+      "$oid": "62807327034374ce61b6838e"
+    },
+    "name": "Brian"
+  }
+},{
+  "_id": {
+    "$oid": "6285c6b8377c91914af7d2a2"
+  },
+  "product_id": {
+    "$oid": "6285b171a1d53de3bc125952"
+  },
+  "text": "Muy bonita la taza Laura",
+  "user": {
+    "name": "Florencia",
+    "_id": {
+      "$oid": "62805b18b8413ae0177e0693"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6286e167db74eff6c9d53de0"
+  },
+  "product_id": {
+    "$oid": "62817c37b8413ae0177e069a"
+  },
+  "text": "Me encantó la fuente, tiene una calidad magnífica",
+  "user": {
+    "_id": {
+      "$oid": "62805b18b8413ae0177e0693"
+    },
+    "name": "Florencia"
+  }
+},{
+  "_id": {
+    "$oid": "628700d875698dfd37913b48"
+  },
+  "product_id": {
+    "$oid": "62817c37b8413ae0177e069a"
+  },
+  "text": "uygjg"
+}]

@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "62817c37b8413ae0177e069a"
+  },
+  "name": "Taza Barna",
+  "category": {
+    "_id": {
+      "$oid": "6286e74b4851e196751cd328"
+    },
+    "name": "Tazas"
+  },
+  "productDescription": "Taza Barna \nMedidas: 9,5 de diametro por 9 de alto (pueden variar por ser productos hechos a mano). \n*Cada pieza que hago es única e irrepetible en su esmaltado. Los colores combinados pueden ser similares, pero nunca van a ser iguales. ¡Esa es la magia! \nApta para horno a gas, horno electrico y microondas."
+},{
+  "_id": {
+    "$oid": "62817cd0b8413ae0177e069b"
+  },
+  "name": "Fuente Kekko",
+  "category": {
+    "_id": {
+      "$oid": "6286e7524851e196751cd329"
+    },
+    "name": "Fuentes"
+  },
+  "productDescription": "Fuente/Plato Kekko. \nMedidas: 23 de diámetro por 4 cm de alto (pueden variar por ser productos hechos a mano). \n *Cada pieza que hago es única e irrepetible en su esmaltado. Los colores combinados pueden ser similares, pero nunca van a ser iguales. ¡Esa es la magia! \n Apta para horno a gas, horno electrico y microondas."
+},{
+  "_id": {
+    "$oid": "6285b130a1d53de3bc125950"
+  },
+  "name": "Bowl Kekko",
+  "category": {
+    "_id": {
+      "$oid": "6286e7404851e196751cd327"
+    },
+    "name": "Bowls"
+  },
+  "productDescription": "Bowl Kekko \nMedidas: 16,5 de diámetro por 5,5 cm de alto (pueden variar por ser productos hechos a mano). \n*Cada pieza que hago es única e irrepetible en su esmaltado. Los colores combinados pueden ser similares, pero nunca van a ser iguales. ¡Esa es la magia! \nApta para horno a gas, horno electrico y microondas."
+},{
+  "_id": {
+    "$oid": "6285b171a1d53de3bc125952"
+  },
+  "name": "Taza Laura",
+  "category": {
+    "_id": {
+      "$oid": "6286e7524851e196751cd329"
+    },
+    "name": "Tazas"
+  },
+  "productDescription": "Taza Laura \nMedidas: 7,5 de diametro por 9,5 cm de alto (pueden variar por ser productos hechos a mano). \n *Cada pieza que hago es única e irrepetible en su esmaltado. Los colores combinados pueden ser similares, pero nunca van a ser iguales. ¡Esa es la magia!\n Apta para horno a gas, horno electrico y microondas."
+},{
+  "_id": {
+    "$oid": "6285b2b3a1d53de3bc125954"
+  },
+  "name": "Mate Martha",
+  "category": {
+    "_id": {
+      "$oid": "6286e75e4851e196751cd32a"
+    },
+    "name": "Mates"
+  },
+  "productDescription": "Mate/Vaso Martha \nMedidas: 7,5 de diámetro por 9cm de alto (pueden variar por ser productos hechos a mano). \n*Cada pieza que hago es única e irrepetible en su esmaltado. Los colores combinados pueden ser similares, pero nunca van a ser iguales. ¡Esa es la magia! \nApta para horno a gas, horno electrico y microondas."
+}]
