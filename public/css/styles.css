@@ -82,6 +82,7 @@ li {
 form {
     padding: 2em;
     padding-top: 1em;
+    text-align: center;
 }
 
 .form-item label {
