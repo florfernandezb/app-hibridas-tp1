@@ -1,8 +1,9 @@
 <%- include('baseTemplate/header'); %>
-<form action=":prodcutId/new-comment" method="post">
+<form action="/new-comment" method="post">
     <label>
         Deje su comentario: <input value="" name="text" />
     </label>
+    <input type="text" hidden value="<%= product[0]._id %>" name="productId">
     <button type="submit" >Guardar</button>
 </form>
 <%- include('baseTemplate/footer'); %>

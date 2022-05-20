@@ -1,10 +1,15 @@
 <div class="comments">
     <h3>Comentarios</h3>
     <% for (let i=0; i < comments.length; i++) { %>
-        <p class="text"><%= comments[i].text %>
-        </p>
-
-        <% } if(comments.length !=0) { const productId=comments[0].product_id %>
+        <% if (comments[i].user) { %>
+            <p class="user">
+                <%= comments[i].user.name %>
+            </p>
             <% } %>
-                <a href="/new-comment.html">Agregar comentario</a>
+                <p class="text"><i>
+                    <%= comments[i].text %></i>
+                </p>
+                <% } if(comments.length !=0) { const productId=comments[0].product_id %>
+                    <% } %>
+                        <a href="/<%= product[0].name %>/new-comment">Agregar comentario</a>
 </div>

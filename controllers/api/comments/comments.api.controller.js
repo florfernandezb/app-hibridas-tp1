@@ -18,7 +18,6 @@ function findByProductId(req, res) {
         .catch(function (err) {
             res.status(404).json(`Algo salió mal ${err}. No hemos encontrado el producto: #${productId}`);
         })
-
 }
 
 function createComment(req, res) {

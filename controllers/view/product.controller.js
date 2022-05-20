@@ -17,38 +17,30 @@ async function saveProductId(id) {
     productId = id;
 }
 
+export async function showForm(req, res) {
+    const productName = req.params.productName
+    const product = await ProductsModel.filter(
+        { 'name': productName }
+    )
+    res.render("new-comment", { product })
+}
+
 export async function createComment(req, res) {
-    if (productId != undefined) {
-        await CommentsModel.createComment(productId, req.body.comment);
+    const product_id = req.body.productId
+    const comment = req.body.text
+    await CommentsModel.createComment(product_id, comment);
 
-        // res.render('product', { product: product, comments: comments });
-
-        const data = await setupProductData(productId);
-
-        res.redirect('/');
-    } else {
-        console.log('something went wrong');
-        res.render('home', data);
-    }
+    res.redirect('/');
 }
 
 async function setupProductData() {
-    console.log("prodid", productId)
     const product = await ProductsModel.findById(productId);
-    // const product = await ProductsModel.filter(productId)
     const comments = await CommentsModel.findByProductId(productId);
     return { product: product, comments: comments }
 }
 
-async function getProductData() {
-
-}
-
-async function getCommentsData() {
-    
-}
-
 export default {
     showProductById,
+    showForm,
     createComment
 }

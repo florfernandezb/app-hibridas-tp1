@@ -224,10 +224,16 @@ select{
 .comments h3 {
     line-height: 70px;
 }
+
 .text {
     background: no-repeat url(../assets/generic-user.png);
     border-left: solid 50px transparent;
     background-position: -50px;
     height: 40px;
     line-height: 40px;
+}
+
+.user {
+    border-left: solid 50px transparent;
+    margin-bottom: -10px;
 }

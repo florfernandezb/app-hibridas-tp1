@@ -17,12 +17,11 @@ route.post('/categoryId', homeController.showProductsByCategory)
 route.get('/products/:id', productController.showProductById);
 
 // comments CONTROLLER
-// route.post('/:productId/new-comment', productController.createComment);
-// route.post('/products/new-comment', productController.saveCommentProductId);
-route.post('/new-comment', productController.createComment);
+route.get('/:productName/new-comment/', productController.showForm);
+route.post('/new-comment/', productController.createComment);
+
 
 // API CONTROLLER
-
 route.get('/api/products', productsApiController.find);
 route.get('/api/products/:productId', productsApiController.findById);
 route.delete('/api/products/:productId', productsApiController.deleteOne);

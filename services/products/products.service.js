@@ -15,10 +15,9 @@ async function find() {
 async function findById(idToFind) {
     return DatabaseHandler.connectDB(
         async function () {
-            console.log(idToFind)
             const product = await DatabaseHandler.findById(collection, idToFind);
             DatabaseHandler.closeDB()
-            
+
             return product;
         }
     )
@@ -38,19 +37,18 @@ async function findByCategory(category) {
         async function () {
             const filter = { "category": { "_id": await category._id, "name": category.name } }
             const products = await DatabaseHandler.filter(collection, filter);
-            
+
             DatabaseHandler.closeDB();
             return products;
         }
     )
 }
 
-async function filter(id) {
+async function filter(filter) {
     return DatabaseHandler.connectDB(
         async function () {
-            const filter = { '_id': await DatabaseHandler.parseToObjectId(id) }
             const comments = await DatabaseHandler.filter(collection, filter)
-            
+
             DatabaseHandler.closeDB();
             return comments;
         }
@@ -64,3 +62,4 @@ export {
     findByCategory,
     filter
 }
+

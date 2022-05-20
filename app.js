@@ -11,5 +11,5 @@ app.use(express.urlencoded({extended: false}));
 app.use('/', AppRoute);
 
 app.listen(1388, function() {
-    console.log('Me conecté al puerto hhtp://localhost:1388');
+    console.log('Me conecté al puerto http://localhost:1388');
 });
