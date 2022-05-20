@@ -68,12 +68,5 @@
     },
     "name": "Florencia"
   }
-},{
-  "_id": {
-    "$oid": "628700d875698dfd37913b48"
-  },
-  "product_id": {
-    "$oid": "62817c37b8413ae0177e069a"
-  },
-  "text": "uygjg"
-}]
+}
+]
