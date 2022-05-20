@@ -1,20 +1,13 @@
 import * as ProductsModel from '../../services/products/products.service.js';
 import * as CommentsModel from '../../services/comments/comments.service.js';
 
-let productId;
-
 export async function showProductById(req, res) {
     const id = req.params.id;
 
-    saveProductId(id, res);
-    const data = await setupProductData();
+    const product = await ProductsModel.findById(id);
+    const comments = await CommentsModel.findByProductId(id);
 
-    res.render('product', data);
-
-}
-
-async function saveProductId(id) {
-    productId = id;
+    res.render('product', { product: product, comments: comments });
 }
 
 export async function showForm(req, res) {
@@ -27,16 +20,17 @@ export async function showForm(req, res) {
 
 export async function createComment(req, res) {
     const product_id = req.body.productId
-    const comment = req.body.text
-    await CommentsModel.createComment(product_id, comment);
+    const newComment = req.body.text
 
-    res.redirect('/');
-}
+    await CommentsModel.createComment(product_id, newComment);
 
-async function setupProductData() {
-    const product = await ProductsModel.findById(productId);
-    const comments = await CommentsModel.findByProductId(productId);
-    return { product: product, comments: comments }
+    try {
+        await ProductsModel.findById(product_id)
+    } catch (err) {
+        console.log('catch', err)
+    }
+
+    res.render('product', { product: await ProductsModel.findById(product_id), comments: await CommentsModel.findByProductId(product_id) })
 }
 
 export default {
